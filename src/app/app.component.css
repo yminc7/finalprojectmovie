@@ -1,3 +1,20 @@
+
 #test label::before {
     background-image: none;
+}
+
+.forBackground{
+    background-color: black;
+    color: white;
+}
+
+.thisResults{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 30px;
+    text-align: center;
+}
+
+.titles{
+    color:white;
 }
