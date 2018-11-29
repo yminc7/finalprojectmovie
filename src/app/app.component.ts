@@ -25,4 +25,11 @@ export class AppComponent {
         }
         )
     }
+    
+    
+    logout(){
+      window.sessionStorage.clear()
+    }
+    
+    
 }

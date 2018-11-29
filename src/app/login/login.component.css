@@ -2,6 +2,11 @@
     display:flex;
     align-items:center;
     flex-direction: column;
-    background-color: rgb(32,32,32);
     box-shadow: 0px 5px 20px black;
+}
+
+input {
+    border-radius: 10px;
+    border-image: linear-gradient(40deg, #A6ABE8, #A6E8A9);
+    border-image-slice: 1;
 }

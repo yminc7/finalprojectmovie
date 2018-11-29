@@ -14,9 +14,10 @@
             
     </form>
     <div class="header-actions">
-        <a href="..." class="nav-link nav-icon">
-            <clr-icon shape="cog"></clr-icon>
-        </a>
+        
+            <button (click) = logout()>Log Out</button>
+            <!--<clr-icon shape="cog"></clr-icon>-->
+    
     </div>
 </header>
 
@@ -31,4 +32,4 @@
 <router-outlet></router-outlet>
 
 <app-login></app-login>
-<!--<app-signup></app-signup>-->
+<app-signup></app-signup>

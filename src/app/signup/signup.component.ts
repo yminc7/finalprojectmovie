@@ -20,9 +20,16 @@ user = {
   
   postSignUp(){
     this._movies.postInfo(this.user).subscribe(
-      (data:any)=>
-      {console.log(data)
-      })
+      (data:any)=> {
+        
+        console.log(data)
+        window.sessionStorage.setItem('token', data.token);
+        window.sessionStorage.setItem('userId', data.userId)
+      
+        
+      }
+      
+      )
   }
 
   ngOnInit() {

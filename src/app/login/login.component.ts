@@ -18,7 +18,11 @@ loginInfo = {
   postLogin(){
     this._movies.postLoginInfo(this.loginInfo).subscribe(
       (data:any)=>
+      
       {console.log(data)
+      window.sessionStorage.setItem('token', data.token);
+      window.sessionStorage.setItem('userId', data.userId)
+      
       })
   }
 
