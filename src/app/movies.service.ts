@@ -17,4 +17,18 @@ export class MoviesService {
   getMovies(name){
    return this.http.get(this.movieURL + this.searchURLandKey + this.query + name )
   }
+  
+  postInfo(user){
+    return this.http.post('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers',
+    user
+    )
+
+  }
+  
+  
+  postLoginInfo(loginInfo){
+    return this.http.post('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/login',
+      loginInfo
+    )
+  }
 }

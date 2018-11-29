@@ -2,26 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service'
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
-  
-loginInfo = {
+export class SignupComponent implements OnInit {
+
+user = {
+  firstName: '',
+  lastName: '',
   email: '',
   password: ''
 }
 
+
   constructor(public _movies: MoviesService) { }
   
-  postLogin(){
-    this._movies.postLoginInfo(this.loginInfo).subscribe(
+  postSignUp(){
+    this._movies.postInfo(this.user).subscribe(
       (data:any)=>
       {console.log(data)
       })
   }
-
 
   ngOnInit() {
   }
