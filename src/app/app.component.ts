@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'front-end-project';
   name;
   searchResults;
+  token;
+  userInfo;
   
   
   
@@ -28,8 +30,17 @@ export class AppComponent {
     
     
     logout(){
-      window.sessionStorage.clear()
+      this._movies.postLogout(window.sessionStorage.token)
+      .subscribe(
+        (data:any) => {
+          console.log('hi')
+          window.sessionStorage.clear()
+        }
+        )
+      
     }
     
+    
+  
     
 }

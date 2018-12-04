@@ -14,6 +14,8 @@ export class MoviesService {
   
   query = '&query='
   
+  userInfo;
+  
   getMovies(name){
    return this.http.get(this.movieURL + this.searchURLandKey + this.query + name )
   }
@@ -32,5 +34,13 @@ export class MoviesService {
     )
   }
   
-  
+  postLogout(token){
+    return this.http.post('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/logout?access_token=' + token,
+    {})
+}
+
+  getUserInfo(identification, token){
+    return this.http.get('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/' + identification + '?access_token=' + token,
+    {})
+  }
 }

@@ -3,3 +3,9 @@
     align-items: center;
     flex-direction: column;
 }
+
+input {
+    border-radius: 10px;
+    border-image: linear-gradient(40deg, #A6ABE8, #A6E8A9);
+    border-image-slice: 1;
+}

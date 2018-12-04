@@ -3,9 +3,8 @@
     background-image: none;
 }
 
-.forBackground{
-    background-color: black;
-    color: white;
+.header-6 {
+    background-image: linear-gradient(40deg, silver, black)
 }
 
 .thisResults{
@@ -16,5 +15,10 @@
 }
 
 .titles{
-    color:white;
+    color:black;
+}
+
+
+.posterPictures{
+    border-radius: 30px;
 }

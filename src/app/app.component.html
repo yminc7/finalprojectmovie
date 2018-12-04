@@ -1,9 +1,10 @@
 <div class= 'forBackground'>
 <header class="header-6">
+    
     <div class="branding">
         <a href="..." class="nav-link">
             
-            <span class="title">Do you need to search for a movie?</span>
+            <div class="title">Do you need to search for a movie?</div>
         </a>
     </div>
     <form class="search" id="test">
@@ -13,23 +14,32 @@
             <button (click) = "searchMovies()">Search By Name</button>
             
     </form>
+
     <div class="header-actions">
-        
-            <button (click) = logout()>Log Out</button>
+        <div class= 'loginSignup'>
+            Hello, {{this._movies.userInfo}}
+        <a routerLink= 'login'>Log in</a> 
+        <a routerLink = 'sign-up'> Sign up</a>
+        </div>
+            <button id= 'logout' (click) = logout()>Log Out</button>
             <!--<clr-icon shape="cog"></clr-icon>-->
     
-    </div>
+</div>
 </header>
+
+<div class= 'backgroundColor'>
+<router-outlet></router-outlet>
+</div>
 
 
 <div class ='thisResults' *ngIf = 'searchResults'>
     <div *ngFor = 'let result of searchResults'>
-        <img height='400px' src = "https://image.tmdb.org/t/p/w185{{result.poster_path}}">
+        <img class= "posterPictures" height='400px' src = "https://image.tmdb.org/t/p/w185{{result.poster_path}}">
         <h4 class = 'titles'>{{result.original_title}}</h4>
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>
 
-<app-login></app-login>
-<app-signup></app-signup>
+
+<!--<app-login></app-login>-->
+<!--<app-signup></app-signup>-->
