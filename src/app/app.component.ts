@@ -12,7 +12,7 @@ export class AppComponent {
   searchResults;
   token;
   userInfo;
-  
+
   
   
   
@@ -37,11 +37,21 @@ export class AppComponent {
           console.log('hi')
           window.sessionStorage.clear()
           this._movies.userInfo = ''
-          // this._movies.logged = false
+  
           
         }
         )
       
+    }
+    
+    postFavorites(fav){
+      console.log(fav)
+      this._movies.saveFavorites(window.sessionStorage.userId, window.sessionStorage.token, {"name" : fav})
+      .subscribe(
+        (data:any) => {
+          console.log(data)
+          console.log('Favorites posted')
+        })
     }
     
     

@@ -18,8 +18,8 @@
     <div class="header-actions">
         <div class= 'loginSignup'>
            <div *ngIf = _movies.userInfo> Hello, {{this._movies.userInfo}} </div>
-        <button routerLink= 'login' (click) = _movies.showRouter() >Log in</button>
-        <button routerLink = 'sign-up' (click) = _movies.showRouter()> Sign up</button>
+        <button routerLink= 'login'>Log in</button>
+        <button routerLink = 'sign-up'> Sign up</button>
         </div>
             <button id= 'logout' (click) = logout()>Log Out</button>
             <!--<clr-icon shape="cog"></clr-icon>-->
@@ -36,6 +36,7 @@
     <div *ngFor = 'let result of searchResults'>
         <img class= "posterPictures" height='400px' src = "https://image.tmdb.org/t/p/w185{{result.poster_path}}">
         <h4 class = 'titles'>{{result.original_title}}</h4>
+        <button (click)= postFavorites(result.original_title)>Add to Favorites</button>
         </div>
     </div>
 </div>

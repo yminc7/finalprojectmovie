@@ -1,10 +1,7 @@
-<div *ngIf = _movies.notlogged>
 <div id = 'login'>
 Email
 <input id = 'email' [(ngModel)] = 'loginInfo.email' autocomplete= 'off'> <br>
 Password
 <input id = 'password' [(ngModel)] = 'loginInfo.password'> <br>
 <button (click) = 'postLogin()'>Log in</button>
-<button (click) = '_movies.close()'>Close Login</button>
 </div> 
-</div>

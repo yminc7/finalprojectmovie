@@ -16,7 +16,6 @@ export class MoviesService {
   
   userInfo;
   
-  notlogged = true
   
   getMovies(name){
    return this.http.get(this.movieURL + this.searchURLandKey + this.query + name )
@@ -46,11 +45,10 @@ export class MoviesService {
     {})
   }
   
-  showRouter(){
-    this.notlogged = true
+  saveFavorites(userId, token, favorites){
+    return this.http.post('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/' + userId + '/MovieFavs?access_token=' +token,
+    favorites)
   }
   
-  close(){
-    this.notlogged = false
-  }
 }
+  

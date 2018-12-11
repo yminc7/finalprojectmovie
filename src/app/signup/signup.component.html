@@ -1,4 +1,4 @@
-<div *ngIf = _movies.notlogged><div id = 'signup'>First Name
+<div id = 'signup'>First Name
 <input id = 'firstName' [(ngModel)] = 'user.firstName' autocomplete = 'off'> <br>
 Last Name
 <input id = 'lastName' [(ngModel)] = 'user.lastName' autocomplete = 'off'> <br>
@@ -7,6 +7,4 @@ Email
 Password
 <input id = 'password' [(ngModel)] = 'user.password'> <br>
 <button (click) = 'postSignUp()'>Sign Up</button>
-<button (click) = '_movies.close()'>Close Sign Up</button>
-</div>
 </div>

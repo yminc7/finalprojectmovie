@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service'
-
+import { MoviesService } from '../movies.service';
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -16,7 +16,7 @@ user = {
 }
 
 
-  constructor(public _movies: MoviesService) { }
+  constructor(public _movies: MoviesService, public router: Router) { }
   
   postSignUp(){
     this._movies.postInfo(this.user).subscribe(
@@ -26,7 +26,7 @@ user = {
         window.sessionStorage.setItem('token', data.token);
         window.sessionStorage.setItem('userId', data.userId)
         this.getInfo()
-        this._movies.notlogged = false
+        this.router.navigate(['/'])
       
         
       }
