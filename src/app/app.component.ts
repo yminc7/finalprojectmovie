@@ -15,6 +15,7 @@ export class AppComponent {
   
   
   
+  
   constructor(public _movies: MoviesService){}
   
   
@@ -35,6 +36,9 @@ export class AppComponent {
         (data:any) => {
           console.log('hi')
           window.sessionStorage.clear()
+          this._movies.userInfo = ''
+          // this._movies.logged = false
+          
         }
         )
       

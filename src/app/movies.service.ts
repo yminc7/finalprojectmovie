@@ -16,6 +16,8 @@ export class MoviesService {
   
   userInfo;
   
+  notlogged = true
+  
   getMovies(name){
    return this.http.get(this.movieURL + this.searchURLandKey + this.query + name )
   }
@@ -42,5 +44,13 @@ export class MoviesService {
   getUserInfo(identification, token){
     return this.http.get('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/' + identification + '?access_token=' + token,
     {})
+  }
+  
+  showRouter(){
+    this.notlogged = true
+  }
+  
+  close(){
+    this.notlogged = false
   }
 }

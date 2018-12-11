@@ -25,12 +25,23 @@ user = {
         console.log(data)
         window.sessionStorage.setItem('token', data.token);
         window.sessionStorage.setItem('userId', data.userId)
+        this.getInfo()
+        this._movies.notlogged = false
       
         
       }
       
       )
   }
+  
+   getInfo(){
+      this._movies.getUserInfo(window.sessionStorage.userId, window.sessionStorage.token)
+      .subscribe(
+        (data:any) => {
+          this._movies.userInfo = data.firstName
+          console.log(this._movies.userInfo)
+        })
+    }
 
   ngOnInit() {
   }

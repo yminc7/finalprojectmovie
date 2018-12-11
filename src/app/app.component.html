@@ -17,9 +17,9 @@
 
     <div class="header-actions">
         <div class= 'loginSignup'>
-            Hello, {{this._movies.userInfo}}
-        <a routerLink= 'login'>Log in</a> 
-        <a routerLink = 'sign-up'> Sign up</a>
+           <div *ngIf = _movies.userInfo> Hello, {{this._movies.userInfo}} </div>
+        <button routerLink= 'login' (click) = _movies.showRouter() >Log in</button>
+        <button routerLink = 'sign-up' (click) = _movies.showRouter()> Sign up</button>
         </div>
             <button id= 'logout' (click) = logout()>Log Out</button>
             <!--<clr-icon shape="cog"></clr-icon>-->
