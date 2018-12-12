@@ -50,5 +50,9 @@ export class MoviesService {
     favorites)
   }
   
+getFavorites(userId, token){
+  return this.http.get('http://meanstack-2018-5-young-phortonssf.c9users.io:8080/api/AppUsers/' + userId + '/MovieFavs?access_token=' +token, {})
+}
+  
 }
   

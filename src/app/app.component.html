@@ -27,6 +27,11 @@
 </div>
 </header>
 
+
+<div *ngIf = 'boxFavorites' class= 'favoriteNames'><div *ngFor = 'let boxFavorite of boxFavorites' class = 'favoriteBox'>
+    {{boxFavorite.name}}
+</div>
+</div>
 <div class= 'backgroundColor'>
 <router-outlet></router-outlet>
 </div>
@@ -39,6 +44,9 @@
         <button (click)= postFavorites(result.original_title)>Add to Favorites</button>
         </div>
     </div>
+    
+    
+
 </div>
 
 

@@ -22,3 +22,8 @@
 .posterPictures{
     border-radius: 30px;
 }
+
+.favoriteNames{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}

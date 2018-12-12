@@ -12,6 +12,7 @@ export class AppComponent {
   searchResults;
   token;
   userInfo;
+  boxFavorites;
 
   
   
@@ -37,6 +38,7 @@ export class AppComponent {
           console.log('hi')
           window.sessionStorage.clear()
           this._movies.userInfo = ''
+          this.boxFavorites = ''
   
           
         }
@@ -51,9 +53,19 @@ export class AppComponent {
         (data:any) => {
           console.log(data)
           console.log('Favorites posted')
+        this.grabFavorites()
         })
     }
     
+    
+    grabFavorites(){
+      this._movies.getFavorites(window.sessionStorage.userId, window.sessionStorage.token)
+      .subscribe(
+        (data:any) => {
+          this.boxFavorites = data
+          console.log(data)
+        })
+    }
     
   
     
