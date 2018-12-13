@@ -27,3 +27,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr)
 }
+
+.title{
+    font-weight:bold!important;
+    font-size: 30px!important;
+}

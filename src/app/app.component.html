@@ -5,24 +5,23 @@
     <div class="branding">
         <a href="..." class="nav-link">
             
-            <div class="title">Do you need to search for a movie?</div>
+            <div class="title">DO YOU NEED TO SEARCH FOR A MOVIE?</div>
         </a>
     </div>
-    <form class="search" id="test">
-        <label for="search_input">
-            <input [(ngModel)] = 'name' name = 'name'>
-            </label>
-            <button (click) = "searchMovies()">Search By Name</button>
+    <form clrForm>
+            <input clrInput [(ngModel)] = 'name' name = 'name'>
+            </form>
+            <button class="btn btn-inverse" (click) = "searchMovies()">Search</button>
             
-    </form>
+    
 
     <div class="header-actions">
         <div class= 'loginSignup'>
            <div *ngIf = _movies.userInfo> Hello, {{this._movies.userInfo}} </div>
-        <button routerLink= 'login'>Log in</button>
-        <button routerLink = 'sign-up'> Sign up</button>
+        <button class="btn btn-inverse" routerLink= 'login'>Log in</button>
+        <button class="btn btn-inverse" routerLink = 'sign-up'> Sign up</button>
         </div>
-            <button id= 'logout' (click) = logout()>Log Out</button>
+            <button class="btn btn-inverse" id= 'logout' (click) = logout()>Log Out</button>
             <!--<clr-icon shape="cog"></clr-icon>-->
     
 </div>
@@ -34,7 +33,7 @@
 
   <div class= 'forBackground'>
 
-<div *ngIf = _movies.loggedIn><button (click) = 'grabFavorites()'>Show Favorites</button></div>
+<div *ngIf = _movies.loggedIn><button class= "btn btn-primary btn-sm" (click) = 'grabFavorites()'>Show Favorites</button></div>
 <div *ngIf = 'boxFavorites' class= 'favoriteNames'><div *ngFor = 'let boxFavorite of boxFavorites' class = 'favoriteBox'>
     {{boxFavorite.name}}
 </div>
@@ -47,10 +46,10 @@
     <div *ngFor = 'let result of searchResults'>
         <img class= "posterPictures" height='400px' src = "https://image.tmdb.org/t/p/w185{{result.poster_path}}">
         <h4 class = 'titles'>{{result.original_title}}</h4>
-        <button (click)= postFavorites(result.original_title)>Add to Favorites</button>
+        <button class= "btn btn-primary btn-sm" (click)= postFavorites(result.original_title)>Add to Favorites</button>
         </div>
     </div>
-    
+
     
 
 </div>
