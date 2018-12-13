@@ -39,6 +39,7 @@ export class AppComponent {
           window.sessionStorage.clear()
           this._movies.userInfo = ''
           this.boxFavorites = ''
+          this._movies.loggedIn = ''
   
           
         }

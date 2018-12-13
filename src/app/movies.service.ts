@@ -16,6 +16,8 @@ export class MoviesService {
   
   userInfo;
   
+  loggedIn;
+  
   
   getMovies(name){
    return this.http.get(this.movieURL + this.searchURLandKey + this.query + name )

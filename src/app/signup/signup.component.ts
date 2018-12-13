@@ -27,7 +27,7 @@ user = {
         window.sessionStorage.setItem('userId', data.userId)
         this.getInfo()
         this.router.navigate(['/'])
-      
+        this._movies.loggedIn = true
         
       }
       

@@ -1,5 +1,6 @@
-<div class= 'forBackground'>
+
 <header class="header-6">
+ 
     
     <div class="branding">
         <a href="..." class="nav-link">
@@ -27,14 +28,19 @@
 </div>
 </header>
 
+<div class= 'backgroundColor'>
+<router-outlet></router-outlet>
+</div>
 
+  <div class= 'forBackground'>
+
+<div *ngIf = _movies.loggedIn><button (click) = 'grabFavorites()'>Show Favorites</button></div>
 <div *ngIf = 'boxFavorites' class= 'favoriteNames'><div *ngFor = 'let boxFavorite of boxFavorites' class = 'favoriteBox'>
     {{boxFavorite.name}}
 </div>
 </div>
-<div class= 'backgroundColor'>
-<router-outlet></router-outlet>
-</div>
+
+
 
 
 <div class ='thisResults' *ngIf = 'searchResults'>
